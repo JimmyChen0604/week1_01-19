@@ -1,0 +1,13 @@
+FROM rstudio/plumber # Or a suitable base R image like rocker/r-base
+
+# Install R packages
+RUN R -e "install.packages(c('dplyr', 'plumber'))"
+
+# Copy your Plumber API files
+COPY 09_deployment/digitalocean/plumber.R /app/plumber.R
+
+# Expose the port Plumber listens on
+EXPOSE 8000
+
+# Command to run your Plumber API
+CMD ["R", "-e", "pr <- plumber::pr('app/plumber.R'); pr$run(host='0.0.0.0', port=8000)"]
