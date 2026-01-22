@@ -18,6 +18,7 @@
 Complete these activities in order:
 
 1. [ACTIVITY: Install Git and Git Bash](ACTIVITY_git.md)
+    - [READ: CHEATSHEET - Git Bash](https://timothyfraser.github.io/dsai/00_quickstart/CHEATSHEET_git_bash.html)
 2. [ACTIVITY: Install Python, R, and Your IDE](ACTIVITY_software.md)
     - [`../.bashrc`](../.bashrc) — Update with Python and R paths
 3. [ACTIVITY: Install Dependencies](ACTIVITY_dependencies.md)

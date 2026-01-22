@@ -20,6 +20,7 @@ Complete these activities in order:
 
 1. [ACTIVITY: Your First API Query](ACTIVITY_first_query.md)
     - [`01_example_curl.sh`](01_example_curl.sh) — curl examples
+        - **New to curl?** [READ: CHEATSHEET - curl](https://timothyfraser.github.io/dsai/01_query_api/CHEATSHEET_curl.html)
     - [`02_example.py`](02_example.py) — Python example
     - [`02_example.R`](02_example.R) — R example
 2. [READ: Finding APIs](READ_find_apis.md) — List of free and public APIs
