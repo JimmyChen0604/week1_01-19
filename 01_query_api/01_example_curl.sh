@@ -22,9 +22,8 @@ echo "TEST_API_KEY: $TEST_API_KEY"
 # 1. GET request (simplest version, only works when no headers required)
 #    Fetches user whose id is 2, using specific endpoint /api/users/2
 # This will fail because we are not using an API key!
-curl -X GET "https://reqres.in/api/users/2"
-
-
+base_url="https://api.nytimes.com/svc/mostpopular/v2/"
+curl -X GET "$base_url/viewed/1.json?api-key=$TEST_API_KEY" -w "\nHTTP Status Code: %{http_code}\n"
 
 
 # ---

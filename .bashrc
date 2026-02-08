@@ -17,8 +17,8 @@ alias Rscript='/c/Program Files/R/R-4.5.2/bin/Rscript.exe'
 export R_LIBS_USER="/c/Program Files/R/R-4.5.2/library"
 
 # Add Python to your Path for this project (here's mine)
-export PATH="$PATH:/c/Python312"
-alias python='/c/Python312/python.exe'
+export PATH="$PATH:/c/Users/user/AppData/Local/Microsoft/WindowsApps"
+alias python='/c/Users/user/AppData/Local/Microsoft/WindowsApps/PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0/python.exe'
 
 # Add uvicorn to your Path for this project - if using Python for APIs (here's mine)
 export PATH="$PATH:/c/Users/tmf77/AppData/Roaming/Python/Python312/Scripts"

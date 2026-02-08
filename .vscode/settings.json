@@ -1,0 +1,38 @@
+{
+  // Python Terminal Settings - Execute in file directory
+  "python.terminal.executeInFileDir": true,
+  "python.terminal.activateEnvironment": true,
+  
+  // Python Interactive Window Settings
+  "python.interactive.window.creationMode": "perFile",
+  "python.interactive.window.showOnStartup": false,
+  
+  // File associations
+  "files.associations": {
+    "*.sh": "shellscript"
+  },
+  
+  // Terminal settings for better line-by-line execution
+  "terminal.integrated.scrollback": 10000,
+  "terminal.integrated.copyOnSelection": true,
+  "terminal.integrated.rightClickBehavior": "copyPaste",
+  "terminal.integrated.sendKeybindingsToShell": false,
+  
+  // Editor settings
+  "editor.suggestSelection": "first",
+  "workbench.editor.enablePreview": false,
+  
+  // Code Runner settings (optional - for running entire files)
+  "code-runner.runInTerminal": true,
+  "code-runner.clearPreviousOutput": true,
+  "code-runner.saveFileBeforeRun": true,
+  "code-runner.executorMap": {
+    "python": "python -u",
+    "shellscript": "bash"
+  },
+  
+  // Python formatting and linting
+  "python.formatting.provider": "none",
+  "python.linting.enabled": true
+}
+

@@ -1,0 +1,239 @@
+---
+description: Preferred README formatting style with emojis, code blocks, and Mermaid diagrams
+alwaysApply: false
+---
+
+# README Formatting Rules
+
+## Overview
+
+This rule defines the preferred formatting style for README.md files. Use this style when creating or editing README documentation.
+
+---
+
+## Structure Guidelines
+
+### 1. Start with a Short Overview Section
+
+Every README should begin with a brief overview section that:
+- Provides a concise 2-3 sentence description of the project/script
+- Explains what the code does and why it's useful
+- Sets context for readers
+
+**Example:**
+```markdown
+## 📋 Project Overview
+
+This Python script queries the New York Times Most Popular API to retrieve and display the most viewed articles from the past day. The script demonstrates how to load API credentials, make authenticated requests, and parse JSON responses.
+```
+
+### 2. Use Clear Section Headers with Emojis
+
+Section headers should:
+- Use descriptive emojis that match the content
+- Follow a consistent emoji pattern throughout
+- Use `##` for main sections, `###` for subsections
+
+**Common Emoji Patterns:**
+- 📋 Project Overview / Overview
+- 🔗 API Endpoints / Links
+- 📊 Data Structure / Data
+- 🔄 Workflow / Process
+- 🚀 Usage / Getting Started
+- 📝 Notes / Additional Information
+- 🔧 Setup / Installation
+- ⚠️ Troubleshooting
+- 📚 Resources / References
+
+**Example:**
+```markdown
+## 🔗 API Endpoint and Parameters
+## 📊 Request and Response Data Structure
+## 🚀 Usage Instructions
+```
+
+### 3. Use Fenced Code Blocks with Language Tags
+
+Always include language tags in code blocks for proper syntax highlighting:
+- Use triple backticks with language identifier
+- Include language tags even for simple code snippets
+- Add comments in code to explain non-obvious operations
+
+**Format:**
+```markdown
+\`\`\`language
+code here
+\`\`\`
+```
+
+**Examples:**
+```markdown
+\`\`\`python
+import requests
+API_KEY = os.getenv("API_KEY")
+\`\`\`
+
+\`\`\`bash
+pip install requests
+\`\`\`
+
+\`\`\`json
+{
+  "status": "OK",
+  "results": []
+}
+\`\`\`
+```
+
+### 4. Include Mermaid Diagrams When Applicable
+
+When documenting workflows, processes, or relationships:
+- Use Mermaid diagrams to visualize complex flows
+- Place diagrams in a dedicated section (e.g., "API Workflow Diagram")
+- Ensure Mermaid syntax is valid
+- Use appropriate diagram types:
+  - `flowchart` for processes/workflows
+  - `sequenceDiagram` for interactions
+  - `graph` for relationships
+
+**Format:**
+```markdown
+## 🔄 API Workflow Diagram
+
+\`\`\`mermaid
+flowchart TD
+    A[Start] --> B[Load API Key]
+    B --> C[Make Request]
+    C --> D[Parse Response]
+\`\`\`
+```
+
+### 5. Reference File Names Using Backticks
+
+Always use backticks for file names, both inline and in code blocks:
+- Use single backticks for inline file references: `` `filename.py` ``
+- Use backticks in code blocks when showing file paths
+- Include file extensions
+
+**Examples:**
+```markdown
+Create a `.env` file in the project root.
+
+The script `query_nyapi.py` loads credentials from `.env`.
+
+See the `requirements.txt` file for dependencies.
+```
+
+---
+
+## Tone and Style
+
+### Friendly but Professional
+
+- **Friendly**: Use approachable language, avoid overly formal tone
+- **Professional**: Maintain clarity and precision
+- **Helpful**: Anticipate reader questions and provide clear guidance
+- **Concise**: Get to the point without unnecessary words
+
+**Good Examples:**
+```markdown
+This script makes it easy to query the API and view results.
+
+If you run into issues, check the troubleshooting section below.
+
+You'll need to set up your API key first—see the setup steps.
+```
+
+**Avoid:**
+```markdown
+It is imperative that users configure the API key prior to execution.
+
+One must ensure that all prerequisites are met before proceeding.
+
+The utilization of this script requires careful attention to detail.
+```
+
+---
+
+## Complete Structure Template
+
+```markdown
+# Project Name
+
+## 📋 Project Overview
+
+[2-3 sentence description of what the project does and why it's useful]
+
+---
+
+## 🔗 Section Name
+
+[Content with clear explanations]
+
+### Subsection
+
+[Subsection content]
+
+\`\`\`python
+# Example code with language tag
+code here
+\`\`\`
+
+---
+
+## 🔄 Workflow Diagram
+
+\`\`\`mermaid
+flowchart TD
+    A[Start] --> B[Step 1]
+    B --> C[Step 2]
+\`\`\`
+
+---
+
+## 🚀 Usage Instructions
+
+### Prerequisites
+
+- Requirement 1
+- Requirement 2
+
+### Setup
+
+1. Step one
+2. Step two
+
+### Running
+
+\`\`\`bash
+command to run
+\`\`\`
+
+---
+
+## 📝 Notes
+
+[Additional information]
+
+---
+
+## 🔗 Additional Resources
+
+- [Link 1](url)
+- [Link 2](url)
+```
+
+---
+
+## Checklist for README Creation
+
+When creating or editing a README, ensure:
+- [ ] Starts with a brief overview section (2-3 sentences)
+- [ ] Uses clear section headers with appropriate emojis
+- [ ] All code blocks include language tags
+- [ ] Mermaid diagrams included when documenting workflows/processes
+- [ ] File names referenced using backticks (e.g., `` `filename.py` ``)
+- [ ] Tone is friendly but professional
+- [ ] Content is clear and beginner-friendly
+- [ ] Sections are well-organized with consistent formatting
+- [ ] Examples and code snippets are practical and runnable

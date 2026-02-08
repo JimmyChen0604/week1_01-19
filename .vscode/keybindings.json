@@ -1,0 +1,13 @@
+[
+  {
+    "key": "ctrl+enter",
+    "command": "workbench.action.terminal.runSelectedText",
+    "when": "editorTextFocus && !findInputFocussed && !replaceInputFocussed"
+  },
+  {
+    "key": "shift+enter",
+    "command": "python.execSelectionInInteractiveWindow",
+    "when": "editorTextFocus && editorLangId == 'python' && !findInputFocussed && !replaceInputFocussed"
+  }
+]
+

@@ -21,11 +21,16 @@ from dotenv import load_dotenv  # for loading variables from .env
 ## 0.2 Load Environment Variables ################
 
 # Load environment variables from the .env file in the project root
+# load_dotenv() automatically searches parent directories for .env file
 # This matches the behavior of readRenviron(".env") in 02_example.R
-load_dotenv(".env")
+load_dotenv()
 
 # Get the API key from the environment
 TEST_API_KEY = os.getenv("TEST_API_KEY")
+
+# Check if API key is set
+if not TEST_API_KEY:
+    raise ValueError("TEST_API_KEY not found in .env file. Please set it up first.")
 
 ## 1. Make API Request ###########################
 
@@ -42,9 +47,6 @@ print(response.status_code)
 
 # Extract the response as JSON and print
 print(response.json())
-
-# Clear environment
-globals.clear()
 
 # Clear environment (optional in short scripts, but shown for parity
 # with the R example that clears its workspace)
