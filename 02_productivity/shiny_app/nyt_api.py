@@ -36,10 +36,20 @@ class NYTApiError(Exception):
 
 # 3. Environment Setup #################################
 
-def load_env_file(filepath=".env"):
+def _root_env_path():
+    """Path to .env at project root (3 levels up from this file: shiny_app -> 02_productivity -> root)."""
+    this_dir = os.path.dirname(os.path.abspath(__file__))
+    root = os.path.dirname(os.path.dirname(os.path.dirname(this_dir)))  # shiny_app -> 02_productivity -> root
+    return os.path.join(root, ".env")
+
+
+def load_env_file(filepath=None):
     """Load variables from .env file into environment.
     Reads each line, skips comments and blanks,
-    and sets key=value pairs as environment variables."""
+    and sets key=value pairs as environment variables.
+    If filepath is None, uses .env at project root."""
+    if filepath is None:
+        filepath = _root_env_path()
     if os.path.exists(filepath):
         with open(filepath, "r") as f:
             for line in f:
@@ -51,10 +61,13 @@ def load_env_file(filepath=".env"):
     return False
 
 
-def get_api_key(env_path=".env"):
+def get_api_key(env_path=None):
     """Load .env and return the TEST_API_KEY value.
+    If env_path is None, looks for .env at project root (same folder as query_nyapi.py, etc.).
     Returns None if the key is not found (instead of raising),
     so the caller can show a friendly message."""
+    if env_path is None:
+        env_path = _root_env_path()
     load_env_file(env_path)
     return os.getenv("TEST_API_KEY")
 

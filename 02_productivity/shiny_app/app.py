@@ -120,10 +120,8 @@ def server(input, output, session):
     # Reactive value to track loading state
     is_loading = reactive.value(False)
 
-    # Check if API key is available on startup
-    api_key = get_api_key(
-        os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))), ".env")
-    )
+    # Check if API key is available on startup (loads from .env at project root)
+    api_key = get_api_key()
 
     ## 2.1 Fetch data when Search is clicked ################
 
