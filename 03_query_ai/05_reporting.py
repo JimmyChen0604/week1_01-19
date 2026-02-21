@@ -14,7 +14,7 @@
 # If you haven't already, install required packages:
 # pip install markdown python-docx
 
-import markdown  # for converting markdown to HTML
+# import markdown  # for converting markdown to HTML
 from docx import Document  # for creating Word documents
 
 ## 0.2 Mock LLM Output #########################
@@ -48,64 +48,64 @@ with open("report.txt", "w", encoding="utf-8") as f:
 
 print("✅ Saved report.txt")
 
-# 2. SAVE AS MARKDOWN (.md) ###################################
+# # 2. SAVE AS MARKDOWN (.md) ###################################
 
-# Markdown files are great for GitHub and documentation
-# The content is already in markdown format, so we just write it
-with open("report.md", "w", encoding="utf-8") as f:
-    f.write(report_text)
+# # Markdown files are great for GitHub and documentation
+# # The content is already in markdown format, so we just write it
+# with open("report.md", "w", encoding="utf-8") as f:
+#     f.write(report_text)
 
-print("✅ Saved report.md")
+# print("✅ Saved report.md")
 
-# 3. SAVE AS HTML (.html) ###################################
+# # 3. SAVE AS HTML (.html) ###################################
 
-# Convert markdown to HTML for web-friendly viewing
-html_content = markdown.markdown(report_text)
+# # Convert markdown to HTML for web-friendly viewing
+# html_content = markdown.markdown(report_text)
 
-# Wrap in basic HTML structure
-html_document = f"""<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>Data Analysis Report</title>
-    <style>
-        body {{ font-family: Arial, sans-serif; max-width: 800px; margin: 40px auto; padding: 20px; }}
-        h1 {{ color: #333; }}
-        h2 {{ color: #666; margin-top: 30px; }}
-    </style>
-</head>
-<body>
-{html_content}
-</body>
-</html>"""
+# # Wrap in basic HTML structure
+# html_document = f"""<!DOCTYPE html>
+# <html>
+# <head>
+#     <meta charset="utf-8">
+#     <title>Data Analysis Report</title>
+#     <style>
+#         body {{ font-family: Arial, sans-serif; max-width: 800px; margin: 40px auto; padding: 20px; }}
+#         h1 {{ color: #333; }}
+#         h2 {{ color: #666; margin-top: 30px; }}
+#     </style>
+# </head>
+# <body>
+# {html_content}
+# </body>
+# </html>"""
 
-with open("report.html", "w", encoding="utf-8") as f:
-    f.write(html_document)
+# with open("report.html", "w", encoding="utf-8") as f:
+#     f.write(html_document)
 
-print("✅ Saved report.html")
+# print("✅ Saved report.html")
 
-# 4. SAVE AS WORD DOCUMENT (.docx) ###################################
+# # 4. SAVE AS WORD DOCUMENT (.docx) ###################################
 
-# Create a Word document for professional sharing
-doc = Document()
+# # Create a Word document for professional sharing
+# doc = Document()
 
-# Split content by lines and add to document
-# Handle markdown headers and formatting
-for line in report_text.split("\n"):
-    if line.startswith("# "):
-        # Main heading
-        doc.add_heading(line[2:], level=1)
-    elif line.startswith("## "):
-        # Subheading
-        doc.add_heading(line[3:], level=2)
-    elif line.startswith("- "):
-        # Bullet point
-        doc.add_paragraph(line[2:], style="List Bullet")
-    elif line.strip():
-        # Regular paragraph
-        doc.add_paragraph(line)
+# # Split content by lines and add to document
+# # Handle markdown headers and formatting
+# for line in report_text.split("\n"):
+#     if line.startswith("# "):
+#         # Main heading
+#         doc.add_heading(line[2:], level=1)
+#     elif line.startswith("## "):
+#         # Subheading
+#         doc.add_heading(line[3:], level=2)
+#     elif line.startswith("- "):
+#         # Bullet point
+#         doc.add_paragraph(line[2:], style="List Bullet")
+#     elif line.strip():
+#         # Regular paragraph
+#         doc.add_paragraph(line)
 
-doc.save("report.docx")
+# doc.save("report.docx")
 
-print("✅ Saved report.docx")
-print("\n✅ All report formats saved successfully!")
+# print("✅ Saved report.docx")
+# print("\n✅ All report formats saved successfully!")

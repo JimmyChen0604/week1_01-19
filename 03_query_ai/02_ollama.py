@@ -58,3 +58,47 @@ print(output)
 
 # Closing message
 print("\n✅ LLM query complete. Exiting Python...\n")
+
+# import requests
+# import json
+# url = "http://localhost:11434/api/chat"
+
+# schema = {
+#   "type": "object",
+#   "properties": {
+#     "records": {
+#       "type": "array",
+#       "items": {
+#         "type": "object",
+#         "properties": {
+#           "id": {"type": "string"},
+#           "name": {"type": "string"},
+#           "age": {"type": "integer"},
+#           "city": {"type": "string"},
+#           "confidence": {"type": "number", "minimum": 0, "maximum": 1}
+#         },
+#         "required": ["id", "name", "age", "city", "confidence"],
+#         "additionalProperties": False
+#       }
+#     }
+#   },
+#   "required": ["records"],
+#   "additionalProperties": False
+# }
+
+# body = {
+#   "model": "gemma3:latest",          # your Modelfile-based model
+#   "messages": [{"role": "user", "content": "John Chen is 25, lives in Taipei."}],
+#   "format": schema,
+#   "stream": False
+# }
+
+# # print("Request Body:")
+# # print(json.dumps(body, indent=4))
+
+# response = requests.post(url, json=body)
+
+# data = response.json()
+
+# print("\nModel Output:")
+# print(data["message"]["content"])

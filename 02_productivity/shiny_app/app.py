@@ -287,3 +287,11 @@ def server(input, output, session):
 # Combine UI and server into the Shiny App object
 app = App(app_ui, server)
 
+
+# 4. Run for deployment #################################
+# When the platform runs `python app.py`, this keeps the server running
+# and binds to 0.0.0.0:PORT so the app is reachable from outside.
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", "8080"))
+    app.run(host="0.0.0.0", port=port)
+
