@@ -1,5 +1,5 @@
 # New York Times Most Popular Articles Query
-
+# HELLO
 ## 📋 Project Overview
 
 This Python script queries the **New York Times Most Popular API** to retrieve the most viewed articles from the past day. It extracts structured metadata including people, organizations, locations, and topics, then normalizes person names and saves the data to CSV format. This script is designed as a foundation for building a Facet-Aware Retrieval-Augmented Generation (RAG) system to analyze political discourse and trends.
